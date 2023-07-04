@@ -7,7 +7,7 @@ using UnityEngine.InputSystem;
 public class PlayerMovement : MonoBehaviour
 {
     //Player speed
-    public float moveSpeed;
+    public int moveSpeed;
 
     //Rigid Body access
     public Rigidbody2D rigidBody;
@@ -20,6 +20,9 @@ public class PlayerMovement : MonoBehaviour
 
     //coin collecting
     public int CoinCount;
+
+    //player healthpoint
+    public int healthpoints;
 
     // Start is called before the first frame update
     void Start()
@@ -98,6 +101,15 @@ public class PlayerMovement : MonoBehaviour
         {
             Destroy(collision.gameObject);
             CoinCount++;
+        }
+        if (collision.gameObject.CompareTag("Health_Crystal"))
+        {
+            Destroy(collision.gameObject);
+        }
+        if (collision.gameObject.CompareTag("Speed_Crystal"))
+        {
+            Transform col = collision.transform;
+            col.transform.position = new Vector2(999, 999);
         }
     }
 }

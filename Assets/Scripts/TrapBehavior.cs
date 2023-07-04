@@ -6,6 +6,9 @@ using UnityEngine;
 public class TrapBehavior : MonoBehaviour
 {
     public Animator anim;
+    public int trapDamage;
+    public PlayerMovement player;
+    public bool isPlayerOnTop;
     // Start is called before the first frame update
     void Start()
     {
@@ -13,14 +16,27 @@ public class TrapBehavior : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.CompareTag("Player")) ;
+        if (collision.gameObject.CompareTag("Player"))
         {
-           anim.SetBool("isActive", true);
-
+            isPlayerOnTop = true;
+            if (collision.CompareTag("Player"))
+            {
+                anim.SetBool("isActive", true);
+            }
         }
     }
     private void OnTriggerExit2D(Collider2D collision)
     {
-        anim.SetBool("isActive", false);
+        isPlayerOnTop= false;
+        if (collision.CompareTag("Player"))
+        { 
+            anim.SetBool("isActive", false); 
+        }
+       
+    }
+
+    public void PlayerDamage()
+    {
+        player.healthpoints -= trapDamage; 
     }
 }
