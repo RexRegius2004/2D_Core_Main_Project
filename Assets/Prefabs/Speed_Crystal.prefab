@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 3757367963202821133}
   m_Layer: 0
   m_Name: Speed_Crystal
-  m_TagString: COIN_PREFAB
+  m_TagString: Speed_Crystal
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -102,7 +102,7 @@ MonoBehaviour:
   health: 0
   speedboost: 5
   healthboost: 0
-  duration: 5
+  duration: 2
   player: {fileID: 0}
 --- !u!61 &3757367963202821133
 BoxCollider2D:

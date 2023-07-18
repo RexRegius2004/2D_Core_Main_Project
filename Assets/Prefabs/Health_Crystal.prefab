@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 6569941852688623102}
   m_Layer: 0
   m_Name: Health_Crystal
-  m_TagString: COIN_PREFAB
+  m_TagString: Health_Crystal
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -102,7 +102,7 @@ MonoBehaviour:
   health: 1
   speedboost: 0
   healthboost: 50
-  duration: 5
+  duration: 0
   player: {fileID: 0}
 --- !u!61 &6569941852688623102
 BoxCollider2D:
